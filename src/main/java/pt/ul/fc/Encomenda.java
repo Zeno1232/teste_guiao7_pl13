@@ -23,7 +23,7 @@ public class Encomenda {
     public void entregar() {}
 
     /** Arquiva a encomenda (definitivo). */
-    @StateRefinement(from="devolvida()", to="arquivada()")
+    @StateRefinement(from="devolvida() || entregue()", to="arquivada()")
     public void arquivar() {}
 
     /** Volta a preparar a encomenda devolvida. */
